@@ -4,16 +4,16 @@
 * Itagaki Fumihiko 17-May-92  Add BSD style, and some bug fix.
 * 0.1
 * 0.2
-* Itagaki Fumihiko 27-Dec-94  SETBLOCK‚µ‚Äˆø”ƒfƒR[ƒhƒoƒbƒtƒ@‚ÍMALLOC‚ÅŠm•Û‚·‚é‚æ‚¤•ÏX
-* Itagaki Fumihiko 27-Dec-94  BSS‚ª‚«‚¿‚ñ‚ÆŠm•Û‚³‚ê‚Ä‚¢‚È‚©‚Á‚½‚Ì‚ğC³
-* Itagaki Fumihiko 27-Dec-94  ƒƒOƒCƒ“–¼“ü—Í, 8•¶š‚ğ’´‚¦‚é•ª‚ÍƒGƒR[ƒoƒbƒN‚µ‚È‚¢
-* Itagaki Fumihiko 27-Dec-94  ƒƒOƒCƒ“–¼“ü—Í, ^H‚Æ^?‚ğdelete•¶š‚Æ‚µ‚Äˆ—
-* Itagaki Fumihiko 27-Dec-94  ƒƒOƒCƒ“–¼“ü—Í, ^U‚Í‰üs‚µ‚È‚¢
-* Itagaki Fumihiko 27-Dec-94  ƒƒOƒCƒ“–¼“ü—Í, ^W‚ğwerase•¶š‚Æ‚µ‚Äˆ—
-* Itagaki Fumihiko 27-Dec-94  ƒƒOƒCƒ“–¼“ü—Í, ^R‚ğredraw•¶š‚Æ‚µ‚Äˆ—
-* Itagaki Fumihiko 27-Dec-94  ƒƒOƒCƒ“–¼“ü—Í, ^Z‚Í’Êí‚Ì•¶š‚Æ‚µ‚Äˆ—
-* Itagaki Fumihiko 27-Dec-94  ƒpƒXƒ[ƒh“ü—Í, ^H‚Æ^?‚ğerase•¶š, ^W‚ğwerase•¶š, ^U‚ğkill•¶š‚Æ‚µ‚Äˆ—
-* Itagaki Fumihiko 27-Dec-94  ƒƒbƒZ[ƒW‚ğ­‚µ•ÏX
+* Itagaki Fumihiko 27-Dec-94  SETBLOCKã—ã¦å¼•æ•°ãƒ‡ã‚³ãƒ¼ãƒ‰ãƒãƒƒãƒ•ã‚¡ã¯MALLOCã§ç¢ºä¿ã™ã‚‹ã‚ˆã†å¤‰æ›´
+* Itagaki Fumihiko 27-Dec-94  BSSãŒãã¡ã‚“ã¨ç¢ºä¿ã•ã‚Œã¦ã„ãªã‹ã£ãŸã®ã‚’ä¿®æ­£
+* Itagaki Fumihiko 27-Dec-94  ãƒ­ã‚°ã‚¤ãƒ³åå…¥åŠ›æ™‚, 8æ–‡å­—ã‚’è¶…ãˆã‚‹åˆ†ã¯ã‚¨ã‚³ãƒ¼ãƒãƒƒã‚¯ã—ãªã„
+* Itagaki Fumihiko 27-Dec-94  ãƒ­ã‚°ã‚¤ãƒ³åå…¥åŠ›æ™‚, ^Hã¨^?ã‚’deleteæ–‡å­—ã¨ã—ã¦å‡¦ç†
+* Itagaki Fumihiko 27-Dec-94  ãƒ­ã‚°ã‚¤ãƒ³åå…¥åŠ›æ™‚, ^Uã¯æ”¹è¡Œã—ãªã„
+* Itagaki Fumihiko 27-Dec-94  ãƒ­ã‚°ã‚¤ãƒ³åå…¥åŠ›æ™‚, ^Wã‚’weraseæ–‡å­—ã¨ã—ã¦å‡¦ç†
+* Itagaki Fumihiko 27-Dec-94  ãƒ­ã‚°ã‚¤ãƒ³åå…¥åŠ›æ™‚, ^Rã‚’redrawæ–‡å­—ã¨ã—ã¦å‡¦ç†
+* Itagaki Fumihiko 27-Dec-94  ãƒ­ã‚°ã‚¤ãƒ³åå…¥åŠ›æ™‚, ^Zã¯é€šå¸¸ã®æ–‡å­—ã¨ã—ã¦å‡¦ç†
+* Itagaki Fumihiko 27-Dec-94  ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰å…¥åŠ›æ™‚, ^Hã¨^?ã‚’eraseæ–‡å­—, ^Wã‚’weraseæ–‡å­—, ^Uã‚’killæ–‡å­—ã¨ã—ã¦å‡¦ç†
+* Itagaki Fumihiko 27-Dec-94  ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å°‘ã—å¤‰æ›´
 * 0.3
 *
 * Usage: passwd [ name ]
@@ -62,7 +62,7 @@
 .xref crypt
 
 
-** ‰Â•Ï’è”
+** å¯å¤‰å®šæ•°
 MAXLOGNAME	equ	8
 MAXPASSWD	equ	8
 
@@ -74,13 +74,13 @@ STACKSIZE	equ	2048
 
 start:
 		bra.s	start1
-		dc.b	'#HUPAIR',0			*  HUPAIR“K‡éŒ¾
+		dc.b	'#HUPAIR',0			*  HUPAIRé©åˆå®£è¨€
 .even
 start1:
-		movea.l	a0,a5				*  A5 := ƒvƒƒOƒ‰ƒ€‚Ìƒƒ‚ƒŠŠÇ—ƒ|ƒCƒ“ƒ^‚ÌƒAƒhƒŒƒX
-		lea	bsstop(pc),a6			*  A6 := BSS‚Ìæ“ªƒAƒhƒŒƒX
-		lea	stack_bottom(a6),a7		*  A7 := ƒXƒ^ƒbƒN‚Ì’ê
-		lea	$10(a0),a0			*  A0 : PDBƒAƒhƒŒƒX
+		movea.l	a0,a5				*  A5 := ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®ãƒ¡ãƒ¢ãƒªç®¡ç†ãƒã‚¤ãƒ³ã‚¿ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+		lea	bsstop(pc),a6			*  A6 := BSSã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
+		lea	stack_bottom(a6),a7		*  A7 := ã‚¹ã‚¿ãƒƒã‚¯ã®åº•
+		lea	$10(a0),a0			*  A0 : PDBã‚¢ãƒ‰ãƒ¬ã‚¹
 		move.l	a7,d0
 		sub.l	a0,d0
 		move.l	d0,-(a7)
@@ -91,7 +91,7 @@ start1:
 		move.l	#-1,ptmp_fd(a6)
 		sf	remove_ptmp(a6)
 	*
-	*  ŠÂ‹«•Ï” SYSROOT ‚ğ“¾‚é
+	*  ç’°å¢ƒå¤‰æ•° SYSROOT ã‚’å¾—ã‚‹
 	*
 		lea	str_nul(pc),a1
 		lea	word_SYSROOT(pc),a0
@@ -102,7 +102,7 @@ start1:
 sysroot_ok:
 		move.l	a1,sysroot(a6)
 	*
-	*  •W€“ü—Í‚ª’[––‚©‚Ç‚¤‚©‚ğƒ`ƒFƒbƒN‚·‚é
+	*  æ¨™æº–å…¥åŠ›ãŒç«¯æœ«ã‹ã©ã†ã‹ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹
 	*
 		clr.l	-(a7)
 		DOS	_IOCTRL
@@ -111,10 +111,10 @@ sysroot_ok:
 		btst	#7,d0				*  character=1/block=0
 		beq	werror_leave_1
 	*
-	*  ˆø”‚ğƒfƒR[ƒh‚µC‰ğß‚·‚é
+	*  å¼•æ•°ã‚’ãƒ‡ã‚³ãƒ¼ãƒ‰ã—ï¼Œè§£é‡ˆã™ã‚‹
 	*
-		lea	1(a2),a0			*  A0 := ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Ì•¶š—ñ‚Ìæ“ªƒAƒhƒŒƒX
-		bsr	strlen				*  D0.L := ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Ì•¶š—ñ‚Ì’·‚³
+		lea	1(a2),a0			*  A0 := ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®æ–‡å­—åˆ—ã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
+		bsr	strlen				*  D0.L := ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®æ–‡å­—åˆ—ã®é•·ã•
 		addq.l	#1,d0
 		move.l	d0,-(a7)
 		DOS	_MALLOC
@@ -122,10 +122,10 @@ sysroot_ok:
 		tst.l	d0
 		bmi	insufficient_memory
 
-		movea.l	d0,a1				*  A1 := ˆø”•À‚ÑŠi”[ƒGƒŠƒA‚Ìæ“ªƒAƒhƒŒƒX
-		bsr	DecodeHUPAIR			*  ˆø”‚ğƒfƒR[ƒh‚·‚é
+		movea.l	d0,a1				*  A1 := å¼•æ•°ä¸¦ã³æ ¼ç´ã‚¨ãƒªã‚¢ã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
+		bsr	DecodeHUPAIR			*  å¼•æ•°ã‚’ãƒ‡ã‚³ãƒ¼ãƒ‰ã™ã‚‹
 	*
-	*  •ÏX‚·‚éƒ†[ƒU–¼‚ğ“¾‚é
+	*  å¤‰æ›´ã™ã‚‹ãƒ¦ãƒ¼ã‚¶åã‚’å¾—ã‚‹
 	*
 		move.l	a1,name(a6)
 		tst.l	d0
@@ -139,7 +139,7 @@ sysroot_ok:
 		bsr	getenv
 		bne	set_name
 		*
-		*  –¼‘O‚ğ•·‚­
+		*  åå‰ã‚’èã
 		*
 		lea	msg_name(pc),a1
 		lea	namebuf(a6),a0
@@ -150,14 +150,14 @@ set_name:
 		move.l	d0,name(a6)
 name_ok:
 	*
-	*  ƒpƒXƒ[ƒhEƒtƒ@ƒCƒ‹‚©‚çA•ÏX‚·‚éƒ†[ƒU‚ğŒŸõ‚·‚é
+	*  ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãƒ»ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã€å¤‰æ›´ã™ã‚‹ãƒ¦ãƒ¼ã‚¶ã‚’æ¤œç´¢ã™ã‚‹
 	*
 		lea	path_passwd(pc),a2
 		lea	passwd(a6),a0
 		bsr	make_sys_pathname
 		bmi	unknown_user
 
-		moveq	#0,d0				*  “Ç‚İ‚İƒ‚[ƒh
+		moveq	#0,d0				*  èª­ã¿è¾¼ã¿ãƒ¢ãƒ¼ãƒ‰
 		bsr	tfopen
 		bmi	unknown_user
 
@@ -172,7 +172,7 @@ name_ok:
 		tst.l	d2
 		bne	unknown_user
 	*
-	*  ƒVƒOƒiƒ‹ˆ—ƒ‹[ƒ`ƒ“‚ğİ’è‚·‚é
+	*  ã‚·ã‚°ãƒŠãƒ«å‡¦ç†ãƒ«ãƒ¼ãƒãƒ³ã‚’è¨­å®šã™ã‚‹
 	*
 		pea	manage_interrupt_signal(pc)
 		move.w	#_CTRLVC,-(a7)
@@ -183,11 +183,11 @@ name_ok:
 		DOS	_INTVCS
 		addq.l	#6,a7
 	*
-	*  ptmp ‚ğopen‚·‚é
+	*  ptmp ã‚’openã™ã‚‹
 	*
 		lea	path_ptmp(pc),a2
 		lea	ptmp(a6),a0
-		bsr	make_sys_pathname		*  strlen(ptmp) < strlen(passwd) ‚È‚çAƒGƒ‰[‚É‚È‚é”¤‚ª‚È‚¢
+		bsr	make_sys_pathname		*  strlen(ptmp) < strlen(passwd) ãªã‚‰ã€ã‚¨ãƒ©ãƒ¼ã«ãªã‚‹ç­ˆãŒãªã„
 		moveq	#0,d0
 		bsr	tfopen
 		bmi	create_tmp
@@ -201,9 +201,9 @@ create_tmp:
 		bsr	drvchkp
 		bmi	cannot_write
 
-		move.w	#$20,-(a7)			*  ’Êí‚Ìƒtƒ@ƒCƒ‹
+		move.w	#$20,-(a7)			*  é€šå¸¸ã®ãƒ•ã‚¡ã‚¤ãƒ«
 		move.l	a0,-(a7)
-		DOS	_CREATE				*  ptmp‚ğì¬‚·‚é
+		DOS	_CREATE				*  ptmpã‚’ä½œæˆã™ã‚‹
 		addq.l	#6,a7
 		tst.l	d0
 		bmi	cannot_write
@@ -211,7 +211,7 @@ create_tmp:
 		move.l	d0,ptmp_fd(a6)
 		st	remove_ptmp(a6)
 	*
-	*  passwd ‚ğopen‚·‚é
+	*  passwd ã‚’openã™ã‚‹
 	*
 		lea	passwd(a6),a0
 		moveq	#0,d0
@@ -221,7 +221,7 @@ create_tmp:
 
 		move.w	d0,passwd_fd(a6)
 	*
-	*  Changing ... ƒƒbƒZ[ƒW‚ğ•\¦
+	*  Changing ... ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤º
 	*
 		lea	msg_user(pc),a0
 		bsr	print
@@ -230,13 +230,13 @@ create_tmp:
 		lea	msg_changing(pc),a0
 		bsr	print
 	*
-	*  i‹Œ^jVƒpƒXƒ[ƒh‚ğq‚Ë‚é
+	*  ï¼ˆæ—§ï¼ï¼‰æ–°ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å°‹ã­ã‚‹
 	*
 		bsr	getnewpasswd
 		tst.l	d0
 		bne	leave_0
 	*
-	*  Vpasswdƒtƒ@ƒCƒ‹‚ğptmp‚Éì¬‚·‚é
+	*  æ–°passwdãƒ•ã‚¡ã‚¤ãƒ«ã‚’ptmpã«ä½œæˆã™ã‚‹
 	*
 		bsr	copy
 		bmi	cannot_write
@@ -248,17 +248,17 @@ create_tmp:
 		bsr	fclose
 		bmi	cannot_write
 	*
-	*  passwd ‚ğ passwd.??? ‚ÉƒŠƒl[ƒ€‚·‚é
+	*  passwd ã‚’ passwd.??? ã«ãƒªãƒãƒ¼ãƒ ã™ã‚‹
 	*
 		lea	passwd(a6),a1
 		move.w	#-1,-(a7)
 		move.l	a1,-(a7)
 		DOS	_CHMOD
 		addq.l	#6,a7
-		move.l	d0,d7				*  D7 : passwd ‚Ì mode
+		move.l	d0,d7				*  D7 : passwd ã® mode
 		bmi	could_not_rename_passwd
 
-		bclr	#0,d0				*  XV‚ğ‹–‰Â‚·‚é
+		bclr	#0,d0				*  æ›´æ–°ã‚’è¨±å¯ã™ã‚‹
 		move.w	d0,-(a7)
 		move.l	a1,-(a7)
 		DOS	_CHMOD
@@ -296,7 +296,7 @@ could_not_rename_passwd:
 opasswd_ok:
 		addq.l	#8,a7
 	*
-	*  ptmp ‚ğ passwd ‚ÉƒŠƒl[ƒ€‚·‚é
+	*  ptmp ã‚’ passwd ã«ãƒªãƒãƒ¼ãƒ ã™ã‚‹
 	*
 		pea	passwd(a6)
 		pea	ptmp(a6)
@@ -308,12 +308,12 @@ opasswd_ok:
 		DOS	_CHMOD
 		addq.l	#6,a7
 	*
-	*  passwd.??? ‚ğíœ‚·‚é
+	*  passwd.??? ã‚’å‰Šé™¤ã™ã‚‹
 	*
 		lea	opasswd(a6),a0
 		bsr	remove
 	*
-	*  I—¹
+	*  çµ‚äº†
 	*
 leave_0:
 		moveq	#0,d0
@@ -369,19 +369,19 @@ manage_abort_signal:
 manage_interrupt_signal:
 		move.w	#$200,d0		* D0 = 00000200
 manage_signals:
-		lea	bsstop(pc),a6			*  A6 := BSS‚Ìæ“ªƒAƒhƒŒƒX
-		lea	stack_bottom(a6),a7		*  A7 := ƒXƒ^ƒbƒN‚Ì’ê
+		lea	bsstop(pc),a6			*  A6 := BSSã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
+		lea	stack_bottom(a6),a7		*  A7 := ã‚¹ã‚¿ãƒƒã‚¯ã®åº•
 		bra	leave
 ****************************************************************
-* getname - •W€“ü—Í‚©‚çƒGƒR[•t‚«‚Å1s“ü—Í‚·‚éiCR‚Ü‚½‚ÍLF‚Ü‚Åj
+* getname - æ¨™æº–å…¥åŠ›ã‹ã‚‰ã‚¨ã‚³ãƒ¼ä»˜ãã§1è¡Œå…¥åŠ›ã™ã‚‹ï¼ˆCRã¾ãŸã¯LFã¾ã§ï¼‰
 *
 * CALL
-*      A0     “ü—Íƒoƒbƒtƒ@
-*      A1     ƒvƒƒ“ƒvƒg•¶š—ñ
-*      D0.L   Å‘å“ü—ÍƒoƒCƒg”iCR‚âLF‚ÍŠÜ‚Ü‚È‚¢j
+*      A0     å…¥åŠ›ãƒãƒƒãƒ•ã‚¡
+*      A1     ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆæ–‡å­—åˆ—
+*      D0.L   æœ€å¤§å…¥åŠ›ãƒã‚¤ãƒˆæ•°ï¼ˆCRã‚„LFã¯å«ã¾ãªã„ï¼‰
 *
 * RETURN
-*      D0.L   “ü—Í•¶š”iCR‚âLF‚ÍŠÜ‚Ü‚È‚¢j
+*      D0.L   å…¥åŠ›æ–‡å­—æ•°ï¼ˆCRã‚„LFã¯å«ã¾ãªã„ï¼‰
 *      CCR    TST.L D0
 ****************************************************************
 getname:
@@ -391,7 +391,7 @@ getname_restart:
 		exg	a0,a1
 		bsr	print
 		exg	a0,a1
-		moveq	#0,d1				*  D1.L : “ü—Í•¶š”
+		moveq	#0,d1				*  D1.L : å…¥åŠ›æ–‡å­—æ•°
 		movea.l	a0,a2
 getname_loop:
 		DOS	_INKEY
@@ -529,13 +529,13 @@ echochar_1:
 getnewpasswd:
 		bsr	clear_password_buffers
 		movea.l	pwd_buf+PW_PASSWD(a6),a0
-		tst.b	(a0)				*  ƒpƒXƒ[ƒh‚ªİ’è‚³‚ê‚Ä‚¢‚È‚¯‚ê‚Î
-		beq	check_period			*  Œ»İ‚ÌƒpƒXƒ[ƒh‚Í•·‚©‚È‚¢
+		tst.b	(a0)				*  ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒè¨­å®šã•ã‚Œã¦ã„ãªã‘ã‚Œã°
+		beq	check_period			*  ç¾åœ¨ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯èã‹ãªã„
 
 		cmpi.b	#',',(a0)
 		beq	check_period
 	*
-	*  Œ»s‚ÌƒpƒXƒ[ƒh‚ğq‚Ë‚ÄÆ‡‚·‚é
+	*  ç¾è¡Œã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å°‹ã­ã¦ç…§åˆã™ã‚‹
 	*
 		lea	msg_old_password(pc),a1
 		lea	old_password(a6),a0
@@ -552,11 +552,11 @@ getnewpasswd:
 		lea	msg_sorry(pc),a0
 		bra	unchanged
 	*
-	*  ƒpƒXƒ[ƒh‚Ì•ÏX‹Ö~ŠúŠÔ‚ğƒ`ƒFƒbƒN‚·‚é
+	*  ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã®å¤‰æ›´ç¦æ­¢æœŸé–“ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹
 	*
 check_period:
 	*
-	*  VƒpƒXƒ[ƒh‚ğ•·‚­
+	*  æ–°ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’èã
 	*
 ask_new_password:
 		move.b	#3,failures_count(a6)
@@ -566,13 +566,13 @@ ask_new_password_loop:
 		lea	new_password(a6),a0
 		move.l	#MAXPASSWD,d0
 		bsr	getpassx
-		move.l	d0,d1				*  D1.L : ƒpƒXƒ[ƒh‚Ì’·‚³
+		move.l	d0,d1				*  D1.L : ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã®é•·ã•
 .if SYSV
 *
-*  System-V Œn‚ÌR¸
+*  System-V ç³»ã®å¯©æŸ»
 *
 		*
-		*  6•¶šˆÈã‚ ‚é‚©H
+		*  6æ–‡å­—ä»¥ä¸Šã‚ã‚‹ã‹ï¼Ÿ
 		*
 		lea	msg_sysv_too_short(pc),a2
 		cmp.l	#6,d1
@@ -597,19 +597,19 @@ inc_alpha:
 
 passwd_count_done:
 		*
-		*  ƒAƒ‹ƒtƒ@ƒxƒbƒg‚ª 2•¶šˆÈã‚ ‚é‚©H
+		*  ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆãŒ 2æ–‡å­—ä»¥ä¸Šã‚ã‚‹ã‹ï¼Ÿ
 		*
 		lea	msg_too_few_alpha(pc),a2
 		cmp.l	#2,d2
 		blo	failure
 		*
-		*  ”ñƒAƒ‹ƒtƒ@ƒxƒbƒg‚ª 1•¶šˆÈã‚ ‚é‚©H
+		*  éã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆãŒ 1æ–‡å­—ä»¥ä¸Šã‚ã‚‹ã‹ï¼Ÿ
 		*
 		lea	msg_no_special(pc),a2
 		tst.l	d3
 		beq	failure
 		*
-		*  ƒƒOƒCƒ“–¼‚âA‚»‚Ì‰ñ“]‚Å‚Í‚È‚¢‚©H
+		*  ãƒ­ã‚°ã‚¤ãƒ³åã‚„ã€ãã®å›è»¢ã§ã¯ãªã„ã‹ï¼Ÿ
 		*
 		lea	msg_same_to_logname(pc),a2
 		movea.l	pwd_buf+PW_NAME(a6),a1
@@ -618,7 +618,7 @@ passwd_count_done:
 		bsr	compare_with_logname
 		beq	failure
 		*
-		*  ƒƒOƒCƒ“–¼‚Ì”½“]‚âA‚»‚Ì‰ñ“]‚Å‚Í‚È‚¢‚©H
+		*  ãƒ­ã‚°ã‚¤ãƒ³åã®åè»¢ã‚„ã€ãã®å›è»¢ã§ã¯ãªã„ã‹ï¼Ÿ
 		*
 		lea	password_buf(a6),a0
 		lea	(a0,d1.l),a1
@@ -626,7 +626,7 @@ passwd_count_done:
 		bsr	compare_with_logname
 		beq	failure
 		*
-		*  ‚±‚ê‚Ü‚Å‚ÌƒpƒXƒ[ƒh‚Æ‚Ìˆá‚¢‚ª 3•¶šˆÈã‚ ‚é‚©
+		*  ã“ã‚Œã¾ã§ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¨ã®é•ã„ãŒ 3æ–‡å­—ä»¥ä¸Šã‚ã‚‹ã‹
 		*
 		lea	new_password(a6),a0
 		lea	old_password(a6),a1
@@ -658,7 +658,7 @@ compare_dec:
 		dbra	d2,compare_loop
 .else
 *
-*  BSD Œn‚ÌR¸
+*  BSD ç³»ã®å¯©æŸ»
 *
 		*tst.l	d1
 		lea	msg_password_unchanged(pc),a0
@@ -688,8 +688,8 @@ clear_only_lower_flag:
 
 passwd_count_done:
 		*
-		*  ‘å•¶š‚Ì‚İ‚©¬•¶š‚Ì‚İ‚Ìê‡‚Í 6•¶šˆÈã
-		*  ‚»‚êˆÈŠO‚Ìê‡‚Í 4•¶šˆÈã‚ ‚é‚©‚Ç‚¤‚©‚ğƒ`ƒFƒbƒN‚·‚é
+		*  å¤§æ–‡å­—ã®ã¿ã‹å°æ–‡å­—ã®ã¿ã®å ´åˆã¯ 6æ–‡å­—ä»¥ä¸Š
+		*  ãã‚Œä»¥å¤–ã®å ´åˆã¯ 4æ–‡å­—ä»¥ä¸Šã‚ã‚‹ã‹ã©ã†ã‹ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹
 		*
 		moveq	#6,d0
 		tst.b	d2
@@ -706,7 +706,7 @@ check_password_length:
 .endif
 recognize:
 		*
-		*  ‚à‚¤ˆê“x•·‚¢‚ÄÆ‡‚·‚é
+		*  ã‚‚ã†ä¸€åº¦èã„ã¦ç…§åˆã™ã‚‹
 		*
 		lea	msg_retype(pc),a1
 		lea	password_buf(a6),a0
@@ -716,7 +716,7 @@ recognize:
 		bsr	strcmp
 		bne	mismatch
 		*
-		*  ˆÃ†‰»‚·‚é
+		*  æš—å·åŒ–ã™ã‚‹
 		*
 		DOS	_GETTIM2
 		moveq	#RANDOM_POOLSIZE,d1
@@ -753,7 +753,7 @@ failure:
 		bra	unchanged
 .else
 		sub.b	#1,failures_count(a6)
-		beq	recognize			*  BSDŒn‚ÍÜ‚ê‚é
+		beq	recognize			*  BSDç³»ã¯æŠ˜ã‚Œã‚‹
 
 		movea.l	a2,a0
 		bsr	print
@@ -813,7 +813,7 @@ getpassx:
 copy:
 		movea.l	name(a6),a0
 		bsr	strlen
-		move.l	d0,d2				*  D2.L : name ‚Ì’·‚³
+		move.l	d0,d2				*  D2.L : name ã®é•·ã•
 		sf	d3				*  D3.B : done
 copy_loop:
 		lea	pwd_line(a6),a0
@@ -838,24 +838,24 @@ copy_loop:
 
 		lea	1(a0,d2.l),a0		*  A0 : top of passwd
 		movea.l	a0,a1			*  A1 : top of passwd
-		bsr	strchr			*  ; ‚ÍƒVƒtƒgJIS‚Ì‘æ“ñƒoƒCƒg‚É‚Í–³‚¢
+		bsr	strchr			*  ; ã¯ã‚·ãƒ•ãƒˆJISã®ç¬¬äºŒãƒã‚¤ãƒˆã«ã¯ç„¡ã„
 		beq	copy_line
 						*  A0 : bottom of passwd
 		movea.l	a0,a2			*  A2 : bottom of passwd
 		addq.l	#1,a0			*  A0 : top of uid
-		bsr	strchr			*  ; ‚ÍƒVƒtƒgJIS‚Ì‘æ“ñƒoƒCƒg‚É‚Í–³‚¢
+		bsr	strchr			*  ; ã¯ã‚·ãƒ•ãƒˆJISã®ç¬¬äºŒãƒã‚¤ãƒˆã«ã¯ç„¡ã„
 		beq	copy_line
 						*  A0 : bottom of uid
 		addq.l	#1,a0			*  A0 : top of gid
-		bsr	strchr			*  ; ‚ÍƒVƒtƒgJIS‚Ì‘æ“ñƒoƒCƒg‚É‚Í–³‚¢
+		bsr	strchr			*  ; ã¯ã‚·ãƒ•ãƒˆJISã®ç¬¬äºŒãƒã‚¤ãƒˆã«ã¯ç„¡ã„
 		beq	copy_line
 						*  A0 : bottom of gid
 		addq.l	#1,a0			*  A0 : top of gecos
-		bsr	strchr			*  ; ‚ÍƒVƒtƒgJIS‚Ì‘æ“ñƒoƒCƒg‚É‚Í–³‚¢
+		bsr	strchr			*  ; ã¯ã‚·ãƒ•ãƒˆJISã®ç¬¬äºŒãƒã‚¤ãƒˆã«ã¯ç„¡ã„
 		beq	copy_line
 						*  A0 : bottom of gecos
 		addq.l	#1,a0			*  A0 : top of dir
-		bsr	strchr			*  ; ‚ÍƒVƒtƒgJIS‚Ì‘æ“ñƒoƒCƒg‚É‚Í–³‚¢
+		bsr	strchr			*  ; ã¯ã‚·ãƒ•ãƒˆJISã®ç¬¬äºŒãƒã‚¤ãƒˆã«ã¯ç„¡ã„
 		beq	copy_line
 						*  A0 : bottom of dir
 		st	d3
@@ -998,35 +998,35 @@ werror_count:
 word_LOGNAME:			dc.b	'LOGNAME',0
 word_USER:			dc.b	'USER',0
 word_SYSROOT:			dc.b	'SYSROOT',0
-msg_not_a_tty:			dc.b	'passwd: “ü—Í‚ªƒLƒƒƒ‰ƒNƒ^EƒfƒoƒCƒX‚Å‚ ‚è‚Ü‚¹‚ñ',CR,LF,0
-msg_insufficient_memory:	dc.b	'passwd: ƒƒ‚ƒŠ‚ª‘«‚è‚Ü‚¹‚ñ',CR,LF,0
-msg_unknown_user:		dc.b	'‚±‚Ì‚æ‚¤‚Èƒ†[ƒU‚Í“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ',CR,LF,0
-msg_tmpfile_busy:		dc.b	'ˆêƒtƒ@ƒCƒ‹‚ªg‚í‚ê‚Ä‚¢‚Ü‚·',CR,LF,0
-msg_cannot_read:		dc.b	'“Ç‚İ‚ß‚Ü‚¹‚ñ',CR,LF,0
-msg_cannot_write:		dc.b	'‘‚«‚ß‚Ü‚¹‚ñ',CR,LF,0
-msg_user:			dc.b	'ƒ†[ƒU ',0
-msg_changing:			dc.b	' ‚ÌƒpƒXƒ[ƒh‚ğ•ÏX‚µ‚Ü‚·B'
+msg_not_a_tty:			dc.b	'passwd: å…¥åŠ›ãŒã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ»ãƒ‡ãƒã‚¤ã‚¹ã§ã‚ã‚Šã¾ã›ã‚“',CR,LF,0
+msg_insufficient_memory:	dc.b	'passwd: ãƒ¡ãƒ¢ãƒªãŒè¶³ã‚Šã¾ã›ã‚“',CR,LF,0
+msg_unknown_user:		dc.b	'ã“ã®ã‚ˆã†ãªãƒ¦ãƒ¼ã‚¶ã¯ç™»éŒ²ã•ã‚Œã¦ã„ã¾ã›ã‚“',CR,LF,0
+msg_tmpfile_busy:		dc.b	'ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ«ãŒä½¿ã‚ã‚Œã¦ã„ã¾ã™',CR,LF,0
+msg_cannot_read:		dc.b	'èª­ã¿è¾¼ã‚ã¾ã›ã‚“',CR,LF,0
+msg_cannot_write:		dc.b	'æ›¸ãè¾¼ã‚ã¾ã›ã‚“',CR,LF,0
+msg_user:			dc.b	'ãƒ¦ãƒ¼ã‚¶ ',0
+msg_changing:			dc.b	' ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å¤‰æ›´ã—ã¾ã™ã€‚'
 str_newline:			dc.b	CR,LF,0
 msg_passwd_colon:		dc.b	'passwd'
 msg_colon:			dc.b	': ',0
-msg_name:			dc.b	'ƒ†[ƒU–¼: ',0
-msg_old_password:		dc.b	'‹ŒƒpƒXƒ[ƒh:',0
-msg_new_password:		dc.b	'VƒpƒXƒ[ƒh:',0
-msg_retype:			dc.b	'VƒpƒXƒ[ƒh‚ğ‚à‚¤ˆê“x“ü—Í‚µ‚Ä‚­‚¾‚³‚¢:',0
-msg_sorry:			dc.b	'ƒ_ƒ‚Å‚·B',CR,LF,0
+msg_name:			dc.b	'ãƒ¦ãƒ¼ã‚¶å: ',0
+msg_old_password:		dc.b	'æ—§ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰:',0
+msg_new_password:		dc.b	'æ–°ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰:',0
+msg_retype:			dc.b	'æ–°ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’ã‚‚ã†ä¸€åº¦å…¥åŠ›ã—ã¦ãã ã•ã„:',0
+msg_sorry:			dc.b	'ãƒ€ãƒ¡ã§ã™ã€‚',CR,LF,0
 .if SYSV
-msg_sysv_too_short:		dc.b	'ƒpƒXƒ[ƒh‚ª’Z‚·‚¬‚Ü‚·B­‚­‚Æ‚à‚UŒ…‚È‚¯‚ê‚Î‚È‚è‚Ü‚¹‚ñB',CR,LF,0
-msg_too_few_alpha:		dc.b	'ƒpƒXƒ[ƒh‚É‚ÍƒAƒ‹ƒtƒ@ƒxƒbƒg•¶š‚ª­‚­‚Æ‚à‚Q‚ÂŠÜ‚Ü‚ê‚È‚¯‚ê‚Î‚È‚è‚Ü‚¹‚ñB',CR,LF,0
-msg_no_special:			dc.b	'ƒpƒXƒ[ƒh‚É‚ÍƒAƒ‹ƒtƒ@ƒxƒbƒgˆÈŠO‚Ì•¶š‚ª­‚­‚Æ‚à‚P‚ÂŠÜ‚Ü‚ê‚È‚¯‚ê‚Î‚È‚è‚Ü‚¹‚ñB',CR,LF,0
-msg_same_to_logname:		dc.b	'ƒpƒXƒ[ƒh‚ÍƒƒOƒCƒ“–¼‚â‚»‚ê‚ğ”½“]‚ ‚é‚¢‚Í‰ñ“]‚µ‚½‚à‚Ì‚Å‚ ‚Á‚Ä‚Í‚È‚è‚Ü‚¹‚ñB',CR,LF,0
-msg_too_few_diff:		dc.b	'VƒpƒXƒ[ƒh‚Í­‚­‚Æ‚à‚R‰ÓŠ‚Ì•¶š‚ª‹ŒƒpƒXƒ[ƒh‚Æˆá‚Á‚Ä‚¢‚È‚¯‚ê‚Î‚È‚è‚Ü‚¹‚ñB',CR,LF,0
-msg_sysv_mismatch:		dc.b	'‡’v‚µ‚Ä‚¢‚Ü‚¹‚ñB‚à‚¤ˆê“x‚¨‚â‚è’¼‚µ‚­‚¾‚³‚¢B',CR,LF,0
-msg_too_many_failure:		dc.b	'¸”s‚ª‘½‚·‚¬‚Ü‚·B‰ü‚ß‚Ä‚¨‚â‚è’¼‚µ‚­‚¾‚³‚¢B',CR,LF,0
-msg_too_many_tries:		dc.b	'‚â‚è’¼‚µ‚ª‘½‚·‚¬‚Ü‚·B‰ü‚ß‚Ä‚¨‚â‚è’¼‚µ‚­‚¾‚³‚¢B',CR,LF,0
+msg_sysv_too_short:		dc.b	'ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒçŸ­ã™ãã¾ã™ã€‚å°‘ãã¨ã‚‚ï¼–æ¡ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚',CR,LF,0
+msg_too_few_alpha:		dc.b	'ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã«ã¯ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆæ–‡å­—ãŒå°‘ãã¨ã‚‚ï¼’ã¤å«ã¾ã‚Œãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚',CR,LF,0
+msg_no_special:			dc.b	'ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã«ã¯ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆä»¥å¤–ã®æ–‡å­—ãŒå°‘ãã¨ã‚‚ï¼‘ã¤å«ã¾ã‚Œãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚',CR,LF,0
+msg_same_to_logname:		dc.b	'ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯ãƒ­ã‚°ã‚¤ãƒ³åã‚„ãã‚Œã‚’åè»¢ã‚ã‚‹ã„ã¯å›è»¢ã—ãŸã‚‚ã®ã§ã‚ã£ã¦ã¯ãªã‚Šã¾ã›ã‚“ã€‚',CR,LF,0
+msg_too_few_diff:		dc.b	'æ–°ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯å°‘ãã¨ã‚‚ï¼“ç®‡æ‰€ã®æ–‡å­—ãŒæ—§ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¨é•ã£ã¦ã„ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚',CR,LF,0
+msg_sysv_mismatch:		dc.b	'åˆè‡´ã—ã¦ã„ã¾ã›ã‚“ã€‚ã‚‚ã†ä¸€åº¦ãŠã‚„ã‚Šç›´ã—ãã ã•ã„ã€‚',CR,LF,0
+msg_too_many_failure:		dc.b	'å¤±æ•—ãŒå¤šã™ãã¾ã™ã€‚æ”¹ã‚ã¦ãŠã‚„ã‚Šç›´ã—ãã ã•ã„ã€‚',CR,LF,0
+msg_too_many_tries:		dc.b	'ã‚„ã‚Šç›´ã—ãŒå¤šã™ãã¾ã™ã€‚æ”¹ã‚ã¦ãŠã‚„ã‚Šç›´ã—ãã ã•ã„ã€‚',CR,LF,0
 .else
-msg_bsd_too_short:		dc.b	'‚à‚Á‚Æ’·‚¢ƒpƒXƒ[ƒh‚ğ‚¨g‚¢‚­‚¾‚³‚¢B',CR,LF,0
-msg_bsd_mismatch:		dc.b	'‡’v‚µ‚Ä‚¢‚Ü‚¹‚ñB'
-msg_password_unchanged:		dc.b	'ƒpƒXƒ[ƒh‚Í•ÏX‚³‚ê‚Ü‚¹‚ñ‚Å‚µ‚½B',CR,LF,0
+msg_bsd_too_short:		dc.b	'ã‚‚ã£ã¨é•·ã„ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’ãŠä½¿ã„ãã ã•ã„ã€‚',CR,LF,0
+msg_bsd_mismatch:		dc.b	'åˆè‡´ã—ã¦ã„ã¾ã›ã‚“ã€‚'
+msg_password_unchanged:		dc.b	'ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯å¤‰æ›´ã•ã‚Œã¾ã›ã‚“ã§ã—ãŸã€‚',CR,LF,0
 .endif
 
 path_passwd:			dc.b	'/etc/passwd',0

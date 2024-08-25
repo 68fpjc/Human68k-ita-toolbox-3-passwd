@@ -1,38 +1,38 @@
-¦ŒhÌ‚ÍÈ—ª‚µ‚Ä‚¢‚Ü‚·
+â€»æ•¬ç§°ã¯çœç•¥ã—ã¦ã„ã¾ã™
 
 
 
 Version 0.3
 
-* ƒƒOƒCƒ“–¼“ü—ÍŽž, 8•¶Žš‚ð’´‚¦‚é•ª‚ÍƒGƒR[ƒoƒbƒN‚µ‚È‚¢B
+* ãƒ­ã‚°ã‚¤ãƒ³åå…¥åŠ›æ™‚, 8æ–‡å­—ã‚’è¶…ãˆã‚‹åˆ†ã¯ã‚¨ã‚³ãƒ¼ãƒãƒƒã‚¯ã—ãªã„ã€‚
 
-* ƒƒOƒCƒ“–¼“ü—ÍŽž‚Ìs•ÒW‹@”\‚ÉA^H‚Æ^?‚ðerase•¶ŽšA^W‚ðwerase•¶ŽšA^R‚ð
-  redraw•¶Žš‚Æ‚µ‚Ä’Ç‰Á‚µ‚½B
+* ãƒ­ã‚°ã‚¤ãƒ³åå…¥åŠ›æ™‚ã®è¡Œç·¨é›†æ©Ÿèƒ½ã«ã€^Hã¨^?ã‚’eraseæ–‡å­—ã€^Wã‚’weraseæ–‡å­—ã€^Rã‚’
+  redrawæ–‡å­—ã¨ã—ã¦è¿½åŠ ã—ãŸã€‚
 
-* ƒƒOƒCƒ“–¼“ü—ÍŽž‚Ì^U‚Í‰üs‚¹‚¸‚Ékill‚·‚é‚æ‚¤‚É‚µ‚½B
+* ãƒ­ã‚°ã‚¤ãƒ³åå…¥åŠ›æ™‚ã®^Uã¯æ”¹è¡Œã›ãšã«killã™ã‚‹ã‚ˆã†ã«ã—ãŸã€‚
 
-* ƒƒOƒCƒ“–¼“ü—ÍŽžA^Z‚Í’Êí‚Ì•¶Žš‚Æ‚µ‚Äˆ—‚·‚é‚æ‚¤‚É‚µ‚½B
+* ãƒ­ã‚°ã‚¤ãƒ³åå…¥åŠ›æ™‚ã€^Zã¯é€šå¸¸ã®æ–‡å­—ã¨ã—ã¦å‡¦ç†ã™ã‚‹ã‚ˆã†ã«ã—ãŸã€‚
 
-* ƒpƒXƒ[ƒh“ü—ÍŽž‚Ìs•ÒW‹@”\‚ÉA^H‚Æ^?‚ðerase•¶ŽšA^W‚ðwerase•¶ŽšA^U‚ð
-  kill•¶Žš‚Æ‚µ‚Ä’Ç‰Á‚µ‚½B
+* ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰å…¥åŠ›æ™‚ã®è¡Œç·¨é›†æ©Ÿèƒ½ã«ã€^Hã¨^?ã‚’eraseæ–‡å­—ã€^Wã‚’weraseæ–‡å­—ã€^Uã‚’
+  killæ–‡å­—ã¨ã—ã¦è¿½åŠ ã—ãŸã€‚
 
-* ƒƒbƒZ[ƒW‚ð­‚µ•ÏXB
+* ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å°‘ã—å¤‰æ›´ã€‚
 
-* BSS‚ª‚«‚¿‚ñ‚ÆŠm•Û‚³‚ê‚Ä‚¢‚È‚©‚Á‚½‚Ì‚ðC³B
+* BSSãŒãã¡ã‚“ã¨ç¢ºä¿ã•ã‚Œã¦ã„ãªã‹ã£ãŸã®ã‚’ä¿®æ­£ã€‚
 
 Version 0.2
 
-* Žd—lE‹@”\‚Ì•ÏX‚È‚µB
+* ä»•æ§˜ãƒ»æ©Ÿèƒ½ã®å¤‰æ›´ãªã—ã€‚
 
 Version 0.1
 
-* ƒhƒLƒ…ƒƒ“ƒg‚ÌC³B
+* ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã®ä¿®æ­£ã€‚
 
-* ‚¢‚­‚Â‚©‚Ì BUG FIXB
+* ã„ãã¤ã‹ã® BUG FIXã€‚
 
-* System-VŒn‚Ì passwd.att ‚Æ BSDŒn‚Ì passwd.ucb ‚Æ‚ð—pˆÓ‚µ‚½B
+* System-Vç³»ã® passwd.att ã¨ BSDç³»ã® passwd.ucb ã¨ã‚’ç”¨æ„ã—ãŸã€‚
 
 Version 0.0
 
-* ì¬B
+* ä½œæˆã€‚
 

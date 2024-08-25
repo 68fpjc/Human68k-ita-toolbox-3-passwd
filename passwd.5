@@ -5,74 +5,74 @@ PASSWD(5)      Human68k ITA TOOLBOX User's Manual       PASSWD(5)
 
 
 
-����
-     passwd - �p�X���[�h�E�t�@�C��
+名称
+     passwd - パスワード・ファイル
 
-�`��
+形式
      $SYSROOT/etc/passwd
 
-���
-     passwd �t�@�C���́C�e���[�U�̃A�J�E���g�Ɋւ����{������
-     �e�L�X�g�E�t�@�C���ł��D���[�U�� Human68k �Ƀ��O�C�������
-     �� login(1) ���Q�Ƃ���ق��C���܂��܂ȃv���O���������[�U�̏�
-     ��𓾂邽�߂ɎQ�Ƃ��܂��D
+解説
+     passwd ファイルは，各ユーザのアカウントに関する基本情報を持
+     つテキスト・ファイルです．ユーザが Human68k にログインする際
+     に login(1) が参照するほか，さまざまなプログラムがユーザの情
+     報を得るために参照します．
 
-     passwd �t�@�C���́C1�s�ɂ� 1���[�U�̏����܂݂܂��D�e�s��
-     �`���͎��̂Ƃ���ł��D
+     passwd ファイルは，1行につき 1ユーザの情報を含みます．各行の
+     形式は次のとおりです．
 
           username;password;uid;gid;gcos-field;home-dir;login-
           shell
 
-     �e�s�́C; �ŋ�؂�ꂽ 7�̍��ڂ��琬���Ă��܂��D���ꂼ���
-     ���ڂ�
+     各行は，; で区切られた 7つの項目から成っています．それぞれの
+     項目は
 
-          username       ���[�U�̃��O�C�����D1�����ȏ� 8�����ȓ�
-                         �̕�����i������ 1�o�C�g�� 1�����Ƃ���j�D
+          username       ユーザのログイン名．1文字以上 8文字以内
+                         の文字列（ただし 1バイトを 1文字とする）．
 
-          password       �Í������ꂽ���[�U�̃p�X���[�h�D���̍���
-                         �� passwd(1) ���L�����܂��D���̍��ڂ���
-                         �ł���ꍇ�Clogin(1) �̓��[�U�Ƀp�X���[
-                         �h�̓��͂�v�����܂���D
+          password       暗号化されたユーザのパスワード．この項目
+                         は passwd(1) が記入します．この項目が空
+                         である場合，login(1) はユーザにパスワー
+                         ドの入力を要求しません．
 
-          uid            ���[�U��ID�D0 �ȏ� 32767 �ȉ��̐��l�D��
-                         ���Ƃ��āC�����̃��[�U�ɓ��� uid ��ݒ�
-                         ���Ă͂Ȃ�܂���D
+          uid            ユーザのID．0 以上 32767 以下の数値．原
+                         則として，複数のユーザに同じ uid を設定
+                         してはなりません．
 
-          gid            ���[�U����������O���[�v��ID�D0 �ȏ�
-                         32767 �ȉ��̐��l�D
+          gid            ユーザが所属するグループのID．0 以上
+                         32767 以下の数値．
 
-          gcos-field     ���[�U�̖{���C�����C�d�b�ԍ��Ȃǂ̏��D
+          gcos-field     ユーザの本名，居所，電話番号などの情報．
 
-          home-dir       ���[�U�̃z�[���E�f�B���N�g���i���O�C����
-                         ��̍�ƃf�B���N�g���j�̃p�X���D
+          home-dir       ユーザのホーム・ディレクトリ（ログイン直
+                         後の作業ディレクトリ）のパス名．
 
-          login-shell    ���O�C�����ɋN������郆�[�U�̏����v���O
-                         �����̃p�X���ƈ���������D���̍��ڂ�����
-                         ; ���܂ނ��Ƃ��ł��܂��D���̍��ڂ���̏�
-                         ���Alogin(1) �� $SYSROOT/bin/COMMAND.X
-                         ���f�t�H���g�̃V�F���Ƃ��Ĉ����Ȃ��ŋN��
-                         ���܂��D�p�X���ƈ���������Ƃ̊Ԃɂ� 1��
-                         ���ȏ�̋󔒂�u���ĕ������܂��D��������
-                         ��́C�v���O�����ɑ΂���������X�g��
-                         HUPAIR �ɂ��������ăG���R�[�h�����R�}��
-                         �h���C��������ł��D
+          login-shell    ログイン時に起動されるユーザの初期プログ
+                         ラムのパス名と引数文字列．この項目だけは
+                         ; を含むことができます．この項目が空の場
+                         合、login(1) は $SYSROOT/bin/COMMAND.X
+                         をデフォルトのシェルとして引数なしで起動
+                         します．パス名と引数文字列との間には 1文
+                         字以上の空白を置いて分離します．引数文字
+                         列は，プログラムに対する引数リストを
+                         HUPAIR にしたがってエンコードしたコマン
+                         ドライン文字列です．
 
-��
-     passwd �t�@�C���̗�������܂��D
+例
+     passwd ファイルの例を示します．
 
           root;enydHZyXUG.lc;0;0;System Administrator;A:/;A:/bin/fish.x
           shutdown;;10;0;shutdown;A:/;A:/bin/fish.x -f -b A:/etc/shutdown
           ita;;100;100;Itagaki Fumihiko;A:/home/ita;A:/bin/fish.x
 
-     ���̗�ɂ� root, shutdown, ita �� 3���[�U�̃G���g��������C
-     ���[�U root �ɂ̂݃p�X���[�h���ݒ肳��Ă��܂��D���[�U
-     shutdown �̓V�X�e�����V���b�g�_�E������V�F���E�X�N���v�g
-     A:/etc/shutdown �����s���邽�߂̃G���g���ł��D
+     この例には root, shutdown, ita の 3ユーザのエントリがあり，
+     ユーザ root にのみパスワードが設定されています．ユーザ
+     shutdown はシステムをシャットダウンするシェル・スクリプト
+     A:/etc/shutdown を実行するためのエントリです．
 
-�֘A�t�@�C��
-     $SYSROOT/etc/passwd      �p�X���[�h�E�t�@�C��
+関連ファイル
+     $SYSROOT/etc/passwd      パスワード・ファイル
 
-�֘A����
+関連事項
      login(1), passwd(1)
 
 

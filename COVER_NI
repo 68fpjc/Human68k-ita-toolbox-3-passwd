@@ -1,31 +1,31 @@
 ========================================================================
-s–¼    Ìt Human68k ITA TOOLBOX #3 "passwd" v0.3
-s“o ˜^ –¼t PASSWD03.LZH
-s“ú    •tt 94/12/27 22:51:32
-sŒ´ ì ŽÒt ”ÂŠ_@Žj•F (QGB02101)
-sì    ŽÒt ”ÂŠ_@Žj•F (QGB02101)
-sŒf Ú ŽÒt ”ÂŠ_@Žj•F (QGB02101)
-s’˜ ì Œ t —¯•Û
-s“WŠJ•û–@t LHA e PASSWD03.LZH
-s“]    Út “¯«ƒtƒ@ƒCƒ‹ NOTICE ‚É‹LÚ‚³‚ê‚½”Ð•zðŒ‚É]‚¤‚±‚ÆB
+ã€Šå    ç§°ã€‹ Human68k ITA TOOLBOX #3 "passwd" v0.3
+ã€Šç™» éŒ² åã€‹ PASSWD03.LZH
+ã€Šæ—¥    ä»˜ã€‹ 94/12/27 22:51:32
+ã€ŠåŽŸ ä½œ è€…ã€‹ æ¿åž£ã€€å²å½¦ (QGB02101)
+ã€Šä½œ    è€…ã€‹ æ¿åž£ã€€å²å½¦ (QGB02101)
+ã€ŠæŽ² è¼‰ è€…ã€‹ æ¿åž£ã€€å²å½¦ (QGB02101)
+ã€Šè‘— ä½œ æ¨©ã€‹ ç•™ä¿
+ã€Šå±•é–‹æ–¹æ³•ã€‹ LHA e PASSWD03.LZH
+ã€Šè»¢    è¼‰ã€‹ åŒæ¢±ãƒ•ã‚¡ã‚¤ãƒ« NOTICE ã«è¨˜è¼‰ã•ã‚ŒãŸé ’å¸ƒæ¡ä»¶ã«å¾“ã†ã“ã¨ã€‚
 ========================================================================
-s”õ    lt
+ã€Šå‚™    è€ƒã€‹
 
-    UNIX ‚Ì /bin/passwd ‚Ì‚æ‚¤‚È“­‚«‚ð‚·‚éƒRƒ}ƒ“ƒh‚Å‚·i‚½‚¾‚µ -f ƒIƒv
-    ƒVƒ‡ƒ“‚â -s ƒIƒvƒVƒ‡ƒ“‚Í”õ‚í‚Á‚Ä‚¢‚Ü‚¹‚ñjBSystem-VŒn‚Ì passwd.att
-    ‚Æ BSDŒn‚Ì passwd.ucb ‚ª‚ ‚è‚Ü‚·B
+    UNIX ã® /bin/passwd ã®ã‚ˆã†ãªåƒãã‚’ã™ã‚‹ã‚³ãƒžãƒ³ãƒ‰ã§ã™ï¼ˆãŸã ã— -f ã‚ªãƒ—
+    ã‚·ãƒ§ãƒ³ã‚„ -s ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯å‚™ã‚ã£ã¦ã„ã¾ã›ã‚“ï¼‰ã€‚System-Vç³»ã® passwd.att
+    ã¨ BSDç³»ã® passwd.ucb ãŒã‚ã‚Šã¾ã™ã€‚
 
-    v0.2 ¨ v0.3
+    v0.2 â†’ v0.3
 
-      * ƒƒOƒCƒ“–¼‚âƒpƒXƒ[ƒh“ü—ÍŽž‚Ìs•ÒW‹@”\‚Ì’Ç‰Á‚Æ•ÏXB
+      * ãƒ­ã‚°ã‚¤ãƒ³åã‚„ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰å…¥åŠ›æ™‚ã®è¡Œç·¨é›†æ©Ÿèƒ½ã®è¿½åŠ ã¨å¤‰æ›´ã€‚
 
-      * BSS‚ª‚«‚¿‚ñ‚ÆŠm•Û‚³‚ê‚Ä‚¢‚È‚©‚Á‚½‚Ì‚ðC³B
+      * BSSãŒãã¡ã‚“ã¨ç¢ºä¿ã•ã‚Œã¦ã„ãªã‹ã£ãŸã®ã‚’ä¿®æ­£ã€‚
 
-      * ƒƒbƒZ[ƒW‚ð­‚µ•ÏXB
+      * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å°‘ã—å¤‰æ›´ã€‚
 
 
-# ƒVƒFƒAƒEƒFƒA‘—‹àƒR[ƒi[
-# ƒVƒFƒAƒEƒFƒA”Ô†: 0728
+# ã‚·ã‚§ã‚¢ã‚¦ã‚§ã‚¢é€é‡‘ã‚³ãƒ¼ãƒŠãƒ¼
+# ã‚·ã‚§ã‚¢ã‚¦ã‚§ã‚¢ç•ªå·: 0728
 
 
 FILENAME: PASSWD03.LZH

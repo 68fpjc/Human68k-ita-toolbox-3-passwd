@@ -1,8 +1,8 @@
-MANIFEST       ���̃t�@�C��
-README         �܂��ŏ��ɂ��ǂ݉�����
-NOTICE         �Ō��Ƌ����ɂ��Ă̍�����
-CHANGES        PASSWD�̃��f���`�F���W�̗���
-passwd.att     System-V�n passwd ���s�t�@�C���i.X �^�C�v�j
-passwd.ucb     BSD�n passwd ���s�t�@�C���i.X �^�C�v�j
-passwd.1       passwd �̃}�j���A��
-passwd.5       �p�X���[�h�E�t�@�C���̃}�j���A��
+MANIFEST       このファイル
+README         まず最初にお読み下さい
+NOTICE         版権と許諾についての告示書
+CHANGES        PASSWDのモデルチェンジの履歴
+passwd.att     System-V系 passwd 実行ファイル（.X タイプ）
+passwd.ucb     BSD系 passwd 実行ファイル（.X タイプ）
+passwd.1       passwd のマニュアル
+passwd.5       パスワード・ファイルのマニュアル
